@@ -39,7 +39,7 @@ pipeline {
                 //  sh "git push https://github.com/RiyaAc/gitops-register-app-kubernetes main"
                // }
            // }
-        }
+       .// }
       
     }
 }
