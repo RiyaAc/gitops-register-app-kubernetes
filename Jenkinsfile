@@ -27,18 +27,18 @@ pipeline {
             }
         }
 
-        stage("Push the changed deployment file to Git") {
-            steps {
-                sh """
-                   git config --global user.name "RiyaAc"
-                   git config --global user.email "riyaachkarpohre32@gmail.com"
-                   git add deployment.yaml
-                   git commit -m "Updated Deployment Manifest"
+         // stage("Push the changed deployment file to Git") {
+            //  steps {
+              //  sh """
+               //    git config --global user.name "RiyaAc"
+               //    git config --global user.email "riyaachkarpohre32@gmail.com"
+               //    git add deployment.yaml
+               //    git commit -m "Updated Deployment Manifest"
                 """
-                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                  sh "git push https://github.com/RiyaAc/gitops-register-app-kubernetes main"
-                }
-            }
+               // withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                //  sh "git push https://github.com/RiyaAc/gitops-register-app-kubernetes main"
+               // }
+           // }
         }
       
     }
